@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'your_dictionary.dart';
 
 class LineBoard extends StatelessWidget {
-  const LineBoard(this.icon, this.title, {super.key});
+  const LineBoard(this.icon, this.title, this.onPressed, {super.key});
   final IconData icon;
   final String title;
+  final Function() onPressed;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,7 +22,7 @@ class LineBoard extends StatelessWidget {
           ),
           selected: true,
         ),
-        onPressed: () {},
+        onPressed: onPressed,
       ),
     );
   }
@@ -32,7 +34,7 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       // backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Dictionary"),
+        title: Text("Từ điển Anh - Anh"),
         elevation: 0,
       ),
       body: SingleChildScrollView(
@@ -42,16 +44,15 @@ class MainPage extends StatelessWidget {
             Stack(children: <Widget>[
               Container(
                 color: Colors.blue,
-                height: 75,
+                height: 70,
               ),
               Center(
                 child: Container(
-                  width: 300,
                   child: TextFormField(
                     cursorColor: Colors.black,
                     decoration: InputDecoration(
                       focusColor: Colors.blue,
-                      hintText: "Tra từ Anh - Việt",
+                      hintText: "Tra từ",
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(50),
@@ -62,7 +63,7 @@ class MainPage extends StatelessWidget {
                       prefixIcon: Icon(
                         Icons.search,
                       ),
-                      suffixIcon: Icon(Icons.mic),
+                      // suffixIcon: Icon(Icons.mic),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(50),
@@ -70,18 +71,21 @@ class MainPage extends StatelessWidget {
                       ),
                     ),
                     onSaved: (String? value) {},
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
+                    // style: TextStyle(
+                    //   color: Colors.white,
+                    // ),
                   ),
                 ),
               )
             ]),
-            LineBoard(Icons.star, "Từ của bạn"),
-            LineBoard(Icons.person, "Tài khoản của bạn"),
-            LineBoard(Icons.refresh, "Từ đã tra"),
-            LineBoard(Icons.smartphone, "Ứng dụng học Tiếng Anh khác"),
-            LineBoard(Icons.settings, "Cài đặt"),
+            LineBoard(Icons.star, "Từ đã lưu", () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => YourDictionary()));
+            }),
+            // LineBoard(Icons.person, "Tài khoản"),
+            // LineBoard(Icons.refresh, "Lịch sử tra từ"),
+            // LineBoard(Icons.smartphone, "Ứng dụng học Tiếng Anh khác"),
+            // LineBoard(Icons.settings, "Cài đặt"),
           ],
         ),
       ),

@@ -1,34 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.indigo,
-      ),
-      home: const MyHomePage(title: 'Từ của bạn'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class YourDictionary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -39,17 +11,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 icon: Icon(Icons.arrow_back),
                 onPressed: () {},
               ),
-              title: Text(widget.title),
-              actions: [
-                IconButton(
-                  icon: Icon(Icons.search),
-                  onPressed: () {},
-                ),
-                IconButton(
-                  icon: Icon(Icons.menu),
-                  onPressed: () {},
-                )
-              ],
+              title: Text("Từ đã lưu"),
               bottom: TabBar(
                   // indicator: BoxDecoration(
                   //   borderRadius: BorderRadius.circular(50), // Creates border
