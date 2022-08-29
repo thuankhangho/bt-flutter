@@ -1,43 +1,19 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+class History extends StatelessWidget {
+  const History({Key? key}) : super(key: key);
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.indigo,
-      ),
-      home: const MyHomePage(title: 'Từ của bạn'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
-        title: Text(widget.title),
+        title: Text("Lịch sử tra từ"),
         actions: [
           IconButton(
             icon: Icon(Icons.search),
@@ -57,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   cursorColor: Colors.black,
                   decoration: InputDecoration(
                     focusColor: Colors.blue,
-                    hintText: "Tìm từ trong thư mục",
+                    hintText: "Tìm từ",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(
                         Radius.circular(50),
@@ -87,9 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       // borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Center(
-                        child:
-                            Text("Chưa có từ vựng được lưu trong thư mục này")))
+                    child: Center(child: Text("Lịch sử tra từ trống")))
               ],
             ),
           )),

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'your_dictionary.dart';
+import 'history.dart';
+import 'login.dart';
+import 'settings.dart';
 
 class LineBoard extends StatelessWidget {
   const LineBoard(this.icon, this.title, this.onPressed, {super.key});
@@ -29,12 +32,14 @@ class LineBoard extends StatelessWidget {
 }
 
 class MainPage extends StatelessWidget {
+  const MainPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Từ điển Anh - Anh"),
+        title: Text("Từ điển Flutter"),
         elevation: 0,
       ),
       body: SingleChildScrollView(
@@ -82,10 +87,19 @@ class MainPage extends StatelessWidget {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => YourDictionary()));
             }),
-            // LineBoard(Icons.person, "Tài khoản"),
-            // LineBoard(Icons.refresh, "Lịch sử tra từ"),
+            LineBoard(Icons.settings, "Cài đặt", () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Settings()));
+            }),
+            LineBoard(Icons.refresh, "Lịch sử tra từ", () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => History()));
+            }),
             // LineBoard(Icons.smartphone, "Ứng dụng học Tiếng Anh khác"),
-            // LineBoard(Icons.settings, "Cài đặt"),
+            LineBoard(Icons.person, "Đăng nhập", () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => LogIn()));
+            }),
           ],
         ),
       ),
