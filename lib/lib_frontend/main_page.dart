@@ -1,26 +1,7 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Dictionary'),
-    );
-  }
-}
-
-class lineBoard extends StatelessWidget {
-  const lineBoard(this.icon, this.title,{super.key});
+class LineBoard extends StatelessWidget {
+  const LineBoard(this.icon, this.title, {super.key});
   final IconData icon;
   final String title;
   @override
@@ -34,30 +15,24 @@ class lineBoard extends StatelessWidget {
         ),
         child: ListTile(
           leading: Icon(icon),
-          title: Text(title,),
+          title: Text(
+            title,
+          ),
           selected: true,
         ),
-        onPressed: (){},
+        onPressed: () {},
       ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text("Dictionary"),
         elevation: 0,
       ),
       body: SingleChildScrollView(
@@ -102,18 +77,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               )
             ]),
-            lineBoard(Icons.star,"Từ của bạn"),
-            lineBoard(Icons.person,"Tài khoản của bạn"),
-            lineBoard(Icons.refresh,"Từ đã tra"),
-            lineBoard(Icons.smartphone,"Ứng dụng học Tiếng Anh khác"),
-            lineBoard(Icons.settings,"Cài đặt"),
+            LineBoard(Icons.star, "Từ của bạn"),
+            LineBoard(Icons.person, "Tài khoản của bạn"),
+            LineBoard(Icons.refresh, "Từ đã tra"),
+            LineBoard(Icons.smartphone, "Ứng dụng học Tiếng Anh khác"),
+            LineBoard(Icons.settings, "Cài đặt"),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Increment',
-        child: const Icon(Icons.search),
       ),
     );
   }
