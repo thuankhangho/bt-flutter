@@ -46,6 +46,25 @@ class _MainPageState extends State<MainPage> {
       appBar: AppBar(
         title: Text("Từ điển Flutter"),
         elevation: 0,
+        actions: [
+          Container(
+            margin: EdgeInsets.fromLTRB(0,10,10,0),
+            child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  // side: BorderSide(width: 3, color: Colors.white),
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    //to set border radius to button
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LogIn()));
+                },
+                child: Icon(Icons.person)),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -57,35 +76,48 @@ class _MainPageState extends State<MainPage> {
                 height: 70,
               ),
               Center(
-                child: Container(
-                  child: TextFormField(
-                    cursorColor: Colors.black,
-                    decoration: InputDecoration(
-                      focusColor: Colors.blue,
-                      hintText: "Tra từ",
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(50),
+                child: ListTile(
+                    title: TextFormField(
+                      cursorColor: Colors.black,
+                      decoration: InputDecoration(
+                        focusColor: Colors.blue,
+                        hintText: "Tra từ",
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(50),
+                          ),
+                        ),
+                        filled: true,
+                        fillColor: Colors.white,
+                        prefixIcon: Icon(
+                          Icons.search,
+                        ),
+                        // suffixIcon: Icon(Icons.mic),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(50),
+                          ),
                         ),
                       ),
-                      filled: true,
-                      fillColor: Colors.white,
-                      prefixIcon: Icon(
-                        Icons.search,
-                      ),
-                      // suffixIcon: Icon(Icons.mic),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(50),
-                        ),
-                      ),
+                      onSaved: (String? value) {},
+                      // style: TextStyle(
+                      //   color: Colors.white,
+                      // ),
                     ),
-                    onSaved: (String? value) {},
-                    // style: TextStyle(
-                    //   color: Colors.white,
-                    // ),
-                  ),
-                ),
+                    trailing: ElevatedButton(
+                        child: Text("Tìm",
+                            style: TextStyle(
+                              // color: Colors.white,
+                              fontSize: 15,
+                            )),
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          elevation:0,
+                          side: BorderSide(width: 3, color: Colors.white),
+                          onPrimary: Colors.white,
+                          onSurface: Colors.grey,
+                          primary: Colors.blue,
+                        ))),
               )
             ]),
             LineBoard(Icons.star, "Từ đã lưu", () {
