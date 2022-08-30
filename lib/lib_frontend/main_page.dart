@@ -3,6 +3,69 @@ import 'your_dictionary.dart';
 import 'history.dart';
 import 'login.dart';
 import 'settings.dart';
+import 'package:flutter/widgets.dart';
+
+class customSearch extends SearchDelegate {
+  List<String> allData = [
+    'am',
+    'is',
+    'are',
+    'be',
+    'china',
+    'russia',
+    'viet nam',
+    'banh mi',
+    'com tam',
+    'pho'
+  ];
+
+  @override
+  List<Widget>? buildActions(BuildContext context) {
+    return [
+      IconButton(
+        icon: const Icon(Icons.clear),
+        onPressed: () {
+          query = '';
+        },
+      )
+    ];
+  }
+
+  @override
+  Widget? buildLeading(BuildContext context) {
+    return IconButton(
+      icon: Icon(Icons.arrow_back),
+      onPressed: () {
+        close(context, null);
+      },
+    );
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    List<String> matchQuery = [];
+    for (var item in allData) {
+      if (item.toLowerCase().contains(query.toLowerCase())) {
+        matchQuery.add(item);
+      }
+    }
+    return ListView.builder(
+      itemBuilder: (context, index) {
+        var result = matchQuery[index];
+        return ListTile(
+          title: Text(result),
+        );
+      },
+      itemCount: matchQuery.length,
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    // TODO: implement buildResults
+    throw UnimplementedError();
+  }
+}
 
 class LineBoard extends StatelessWidget {
   const LineBoard(this.icon, this.title, this.onPressed, {super.key});
@@ -48,7 +111,7 @@ class _MainPageState extends State<MainPage> {
         elevation: 0,
         actions: [
           Container(
-            margin: EdgeInsets.fromLTRB(0,10,10,0),
+            margin: EdgeInsets.fromLTRB(0, 10, 10, 0),
             child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   // side: BorderSide(width: 3, color: Colors.white),
@@ -78,32 +141,34 @@ class _MainPageState extends State<MainPage> {
               Center(
                 child: ListTile(
                     title: TextFormField(
-                      cursorColor: Colors.black,
-                      decoration: InputDecoration(
-                        focusColor: Colors.blue,
-                        hintText: "Tra từ",
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(50),
+                        cursorColor: Colors.black,
+                        decoration: InputDecoration(
+                          focusColor: Colors.blue,
+                          hintText: "Tra từ",
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(50),
+                            ),
+                          ),
+                          filled: true,
+                          fillColor: Colors.white,
+                          prefixIcon: Icon(
+                            Icons.search,
+                          ),
+                          // suffixIcon: Icon(Icons.mic),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(50),
+                            ),
                           ),
                         ),
-                        filled: true,
-                        fillColor: Colors.white,
-                        prefixIcon: Icon(
-                          Icons.search,
+                        // onSaved: (String? value) {},
+                        onTap: () => showSearch(
+                            context: context, delegate: customSearch())
+                        // style: TextStyle(
+                        //   color: Colors.white,
+                        // ),
                         ),
-                        // suffixIcon: Icon(Icons.mic),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(50),
-                          ),
-                        ),
-                      ),
-                      onSaved: (String? value) {},
-                      // style: TextStyle(
-                      //   color: Colors.white,
-                      // ),
-                    ),
                     trailing: ElevatedButton(
                         child: Text("Tìm",
                             style: TextStyle(
@@ -112,7 +177,7 @@ class _MainPageState extends State<MainPage> {
                             )),
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                          elevation:0,
+                          elevation: 0,
                           side: BorderSide(width: 3, color: Colors.white),
                           onPrimary: Colors.white,
                           onSurface: Colors.grey,
