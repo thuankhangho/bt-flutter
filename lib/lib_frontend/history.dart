@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'custom_search.dart';
 
 class History extends StatelessWidget {
   const History({Key? key}) : super(key: key);
@@ -52,6 +53,8 @@ class History extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.black,
                   ),
+                  onTap: () => showSearch(
+                            context: context, delegate: customSearch())
                 ),
                 Container(
                     margin: EdgeInsets.fromLTRB(0, 10, 0, 0),

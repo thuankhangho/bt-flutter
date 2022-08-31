@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'custom_search.dart';
 
 class YourDictionary extends StatelessWidget {
   const YourDictionary({Key? key}) : super(key: key);
@@ -68,6 +69,8 @@ class YourDictionary extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.black,
                           ),
+                          onTap: () => showSearch(
+                            context: context, delegate: customSearch())
                         ),
                         Container(
                             margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
@@ -114,6 +117,8 @@ class YourDictionary extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.black,
                           ),
+                          onTap: () => showSearch(
+                            context: context, delegate: customSearch())
                         ),
                         Container(
                             margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
