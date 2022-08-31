@@ -48,7 +48,19 @@ class LogIn extends StatelessWidget {
           ),
           Center(
               child: TextButton(
-                  onPressed: () {},
+                  onPressed: () => showDialog<String>(
+                        context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          title: const Text('Lỗi'),
+                          content: const Text('Tính năng hiện chưa cập nhật!'),
+                          actions: <Widget>[
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, 'OK'),
+                              child: const Text('OK'),
+                            ),
+                          ],
+                        ),
+                      ),
                   child: Text("Quên mật khẩu?",
                       style: TextStyle(
                         color: Colors.blue[500],

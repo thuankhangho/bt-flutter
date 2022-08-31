@@ -20,7 +20,23 @@ class LineBoard extends StatelessWidget {
           ),
           selected: true,
         ),
-        onPressed: () {},
+        onPressed: () => showDialog<String>(
+          context: context,
+          builder: (BuildContext context) => AlertDialog(
+            title: const Text('Lỗi'),
+            content: const Text('Tính năng hiện chưa cập nhật!'),
+            actions: <Widget>[
+              // TextButton(
+              //   onPressed: () => Navigator.pop(context, 'Hủy'),
+              //   child: const Text('Hủy'),
+              // ),
+              TextButton(
+                onPressed: () => Navigator.pop(context, 'OK'),
+                child: const Text('OK'),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
