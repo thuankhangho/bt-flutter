@@ -1,18 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/services/services.dart';
 
 class customSearch extends SearchDelegate {
-  List<String> allData = [
-    'am',
-    'is',
-    'are',
-    'be',
-    'china',
-    'russia',
-    'viet nam',
-    'banh mi',
-    'com tam',
-    'pho'
-  ];
+  List<dynamic> allData = [];
 
   @override
   List<Widget>? buildActions(BuildContext context) {
