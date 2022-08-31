@@ -5,6 +5,8 @@ import 'login.dart';
 import 'settings.dart';
 import 'package:flutter/widgets.dart';
 
+TextEditingController search_input = TextEditingController();
+
 class customSearch extends SearchDelegate {
   List<String> allData = [
     'am',
@@ -141,6 +143,7 @@ class _MainPageState extends State<MainPage> {
               Center(
                 child: ListTile(
                     title: TextFormField(
+                        controller: search_input,
                         cursorColor: Colors.black,
                         decoration: InputDecoration(
                           focusColor: Colors.blue,
