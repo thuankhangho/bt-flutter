@@ -93,8 +93,9 @@ class YourDictionary extends StatelessWidget {
                         StreamBuilder<QuerySnapshot>(
                           stream: yourDict.getStream(),
                           builder: ((context, snapshot) {
-                            if (snapshot.hasData == false)
-                              return LinearProgressIndicator();
+                            if (snapshot.hasData == false) {
+                              return const LinearProgressIndicator();
+                            }
                             return buildDict(
                                 context, snapshot.data?.docs ?? []);
                           }),

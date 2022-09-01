@@ -3,7 +3,6 @@ import 'your_dictionary.dart';
 import 'history.dart';
 import 'login.dart';
 import 'settings.dart';
-import 'package:flutter/widgets.dart';
 import 'custom_search.dart';
 
 TextEditingController search_input = TextEditingController();
