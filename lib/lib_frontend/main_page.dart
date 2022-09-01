@@ -106,7 +106,7 @@ class _MainPageState extends State<MainPage> {
                         ),
                         // onSaved: (String? value) {},
                         onTap: () => showSearch(
-                            context: context, delegate: customSearch())
+                            context: context, delegate: CustomSearch())
                         // style: TextStyle(
                         //   color: Colors.white,
                         // ),

@@ -3,13 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/models/dictionary_model.dart';
 import 'package:flutter_app/services/database.dart';
 import 'custom_search.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 final yourDict = Database();
-Future<void> setup() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-}
 
 class YourDictionary extends StatelessWidget {
   const YourDictionary({Key? key}) : super(key: key);
@@ -30,7 +25,6 @@ class YourDictionary extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    setup();
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -95,7 +89,7 @@ class YourDictionary extends StatelessWidget {
                               color: Colors.black,
                             ),
                             onTap: () => showSearch(
-                                context: context, delegate: customSearch())),
+                                context: context, delegate: CustomSearch())),
                         StreamBuilder<QuerySnapshot>(
                           stream: yourDict.getStream(),
                           builder: ((context, snapshot) {
@@ -151,7 +145,7 @@ class YourDictionary extends StatelessWidget {
                               color: Colors.black,
                             ),
                             onTap: () => showSearch(
-                                context: context, delegate: customSearch())),
+                                context: context, delegate: CustomSearch())),
                         Container(
                             margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
                             height: 500,

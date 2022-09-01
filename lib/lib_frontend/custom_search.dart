@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/models/dictionary_model.dart';
 import 'package:flutter_app/services/services.dart';
 
-class customSearch extends SearchDelegate {
+class CustomSearch extends SearchDelegate {
   List<dynamic> allData = [];
 
   @override
@@ -65,7 +65,7 @@ class customSearch extends SearchDelegate {
                 return ListTile(
                   title: Text(
                       style: TextStyle(fontWeight: FontWeight.bold),
-                      search_data.word!),
+                      search_data.word),
                   subtitle: Text(search_data.meanings![index].partOfSpeech!),
                 );
               },

@@ -1,10 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_app/lib_frontend/your_dictionary.dart';
 import '../models/dictionary_model.dart';
 
 class Database {
   final CollectionReference yourDict =
-      FirebaseFirestore.instance.collection("words");
+      FirebaseFirestore.instance.collection("yourDict");
 
   //get Stream
   Stream<QuerySnapshot> getStream() {

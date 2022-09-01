@@ -31,31 +31,30 @@ class History extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 TextFormField(
-                  cursorColor: Colors.black,
-                  decoration: InputDecoration(
-                    focusColor: Colors.blue,
-                    hintText: "Tìm từ",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(50),
+                    cursorColor: Colors.black,
+                    decoration: InputDecoration(
+                      focusColor: Colors.blue,
+                      hintText: "Tìm từ",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(50),
+                        ),
+                      ),
+                      filled: true,
+                      fillColor: Colors.white,
+                      prefixIcon: Icon(Icons.search),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(50),
+                        ),
                       ),
                     ),
-                    filled: true,
-                    fillColor: Colors.white,
-                    prefixIcon: Icon(Icons.search),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(50),
-                      ),
+                    onSaved: (String? value) {},
+                    style: TextStyle(
+                      color: Colors.black,
                     ),
-                  ),
-                  onSaved: (String? value) {},
-                  style: TextStyle(
-                    color: Colors.black,
-                  ),
-                  onTap: () => showSearch(
-                            context: context, delegate: customSearch())
-                ),
+                    onTap: () =>
+                        showSearch(context: context, delegate: CustomSearch())),
                 Container(
                     margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
                     height: 500,
