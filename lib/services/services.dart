@@ -13,6 +13,7 @@ class Services {
       if (req.statusCode == 200) {
         print(req.body);
         final dictModel = dictionaryModelFromJson(req.body);
+
         return dictModel;
       } else {
         print(req.body);
