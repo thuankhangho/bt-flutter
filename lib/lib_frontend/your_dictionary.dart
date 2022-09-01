@@ -4,7 +4,7 @@ import 'package:flutter_app/models/dictionary_model.dart';
 import 'package:flutter_app/services/database.dart';
 import 'custom_search.dart';
 
-final yourDict = Database();
+/*final yourDict = Database();
 
 class YourDictionary extends StatelessWidget {
   const YourDictionary({Key? key}) : super(key: key);
@@ -166,4 +166,4 @@ class YourDictionary extends StatelessWidget {
           )),
     );
   }
-}
+}*/

@@ -127,10 +127,10 @@ class _MainPageState extends State<MainPage> {
                         ))),
               )
             ]),
-            LineBoard(Icons.star, "Từ đã lưu", () {
+            /*LineBoard(Icons.star, "Từ đã lưu", () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => YourDictionary()));
-            }),
+            }),*/
             LineBoard(Icons.settings, "Cài đặt", () {
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => Settings()));
