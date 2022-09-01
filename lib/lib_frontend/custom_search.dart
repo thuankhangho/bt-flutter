@@ -48,36 +48,25 @@ class CustomSearch extends SearchDelegate {
 
   @override
   Widget buildResults(BuildContext context) {
-    return FutureBuilder<List<DictionaryModel>>(
+    return FutureBuilder<DictionaryModel>(
         future: Services().getDefinition(word: query),
-        builder: ((context, AsyncSnapshot<List<DictionaryModel>> snapshot) {
-          /*if (!snapshot.hasData) {
-            return Center(child: Text("Enter a search word"));
-          }
-          return ListTile(
-            title: Text(snapshot.data![0].word),
-          );*/
+        builder: ((context, AsyncSnapshot<DictionaryModel> snapshot) {
           if (snapshot.hasData) {
-            //print("DATAAAAAA: ${snapshot.data!.meanings!.length}");
             return ListView.builder(
-              itemCount: snapshot.data!.length,
+              itemCount: snapshot.data?.definitions?.length,
               itemBuilder: (context, index) {
-                final search_data = snapshot.data![index];
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ListTile(
-                    title: Row(
-                      children: [
-                        Text(
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                            search_data.word),
-                        Text(
-                            " (${search_data.meanings![index].partOfSpeech!})"),
-                      ],
-                    ),
-                    subtitle: Text(search_data
-                        .meanings![index].definitions![index].definition!),
+                final define = snapshot.data!.definitions![index];
+                final word = snapshot.data?.word;
+                return ListTile(
+                  title: Row(
+                    children: [
+                      Text(
+                          style: TextStyle(fontWeight: FontWeight.bold), word!),
+                      SizedBox(width: 20),
+                      Text(define.type!)
+                    ],
                   ),
+                  subtitle: Text(define.definition!),
                 );
               },
             );
@@ -89,6 +78,7 @@ class CustomSearch extends SearchDelegate {
           } else {
             return Center(child: CircularProgressIndicator());
           }
+          //return ListView(children: [List.generate(length, (index) => null)],);
         }));
   }
 }

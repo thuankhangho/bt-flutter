@@ -12,7 +12,7 @@ class YourDictionary extends StatelessWidget {
   Widget buildDictItems(BuildContext context, DocumentSnapshot snapshot) {
     final word = DictionaryModel.fromSnapshot(snapshot);
     return ListTile(
-      title: Text(word.word),
+      title: Text(word.word!),
     );
   }
 
