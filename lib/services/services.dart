@@ -27,8 +27,8 @@ class Services {
       } else if (e is TimeoutException) {
         //treat TimeoutException
         return Future.error('Time Out!');
-      } else
-        return Future.error('Unhandled Exception');
+      }
+      return Future.error('Unhandled Exception');
     }
   }
 }
