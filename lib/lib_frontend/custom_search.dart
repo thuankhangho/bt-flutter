@@ -58,15 +58,26 @@ class CustomSearch extends SearchDelegate {
             title: Text(snapshot.data![0].word),
           );*/
           if (snapshot.hasData) {
+            //print("DATAAAAAA: ${snapshot.data!.meanings!.length}");
             return ListView.builder(
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
                 final search_data = snapshot.data![index];
-                return ListTile(
-                  title: Text(
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                      search_data.word),
-                  subtitle: Text(search_data.meanings![index].partOfSpeech!),
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListTile(
+                    title: Row(
+                      children: [
+                        Text(
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                            search_data.word),
+                        Text(
+                            " (${search_data.meanings![index].partOfSpeech!})"),
+                      ],
+                    ),
+                    subtitle: Text(search_data
+                        .meanings![index].definitions![index].definition!),
+                  ),
                 );
               },
             );
@@ -78,7 +89,6 @@ class CustomSearch extends SearchDelegate {
           } else {
             return Center(child: CircularProgressIndicator());
           }
-          //return ListView(children: [List.generate(length, (index) => null)],);
         }));
   }
 }
