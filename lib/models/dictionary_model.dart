@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 List<DictionaryModel> dictionaryModelFromJson(String str) =>
     List<DictionaryModel>.from(
         json.decode(str).map((x) => DictionaryModel.fromJson(x)));
@@ -9,14 +11,14 @@ String dictionaryModelToJson(List<DictionaryModel> data) =>
 
 class DictionaryModel {
   DictionaryModel({
-    this.word,
+    required this.word,
     this.phonetic,
     this.phonetics,
     this.origin,
     this.meanings,
   });
 
-  String? word;
+  String word;
   String? phonetic;
   List<Phonetic>? phonetics;
   String? origin;
@@ -40,6 +42,13 @@ class DictionaryModel {
         "origin": origin,
         "meanings": List<dynamic>.from(meanings!.map((x) => x.toJson())),
       };
+
+  //get word from snapshot
+  factory DictionaryModel.fromSnapshot(DocumentSnapshot snapshot) {
+    final newWord =
+        DictionaryModel.fromJson(snapshot.data() as Map<String, dynamic>);
+    return newWord;
+  }
 }
 
 class Meaning {
