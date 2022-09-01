@@ -67,8 +67,7 @@ class Settings extends StatelessWidget {
         children: [
           LineBoard(Icons.shopping_cart, "Đăng ký thành viên VIP"),
           LineBoard(Icons.settings, "Kiểm tra dữ liệu offline"),
-          LineBoard(Icons.wechat_rounded, "Góp ý"),
-          LineBoard(Icons.error_rounded, "Báo lỗi"),
+          LineBoard(Icons.wechat_sharp, "Báo lỗi & Góp Ý"),
           LineBoard(Icons.security, "Chính sách bảo mật"),
           LineBoard(Icons.thumb_up, "Đánh giá ứng dụng"),
           LineBoard(Icons.share, "Chia sẻ"),
