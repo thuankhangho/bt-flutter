@@ -13,13 +13,18 @@ class Services {
     var headers = {
       'Authorization': 'Token ' + token,
     };
-    final req = await http.get(headers: headers, Uri.parse(res_url));
-    print(req.body);
-    if (req.statusCode == 200) {
-      final dictModel = dictionaryModelFromJson(req.body);
-      return dictModel;
-    } else {
-      throw ErrorDescription(req.body);
+    try {
+      final req = await http.get(headers: headers, Uri.parse(res_url));
+      print(req.body);
+      if (req.statusCode == 200) {
+        final dictModel = dictionaryModelFromJson(req.body);
+        return dictModel;
+      } else {
+        throw ErrorDescription(req.body);
+      }
+    } catch (e) {
+      print(e);
+      throw e;
     }
   }
 }
