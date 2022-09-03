@@ -17,12 +17,7 @@ class CreateAccount extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Center(
-            child: Image.network(
-                'https://ebudezain.com/upload/images/flutter/flutter12.png',
-                height: 80,
-                width: 200),
-          ),
+          Center(child: FlutterLogo(size: 150)),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(

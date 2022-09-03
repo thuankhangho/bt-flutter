@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'create_account.dart';
+import 'forgot_password.dart';
 
 class LogIn extends StatelessWidget {
   const LogIn({Key? key}) : super(key: key);
@@ -48,19 +49,12 @@ class LogIn extends StatelessWidget {
           ),
           Center(
               child: TextButton(
-                  onPressed: () => showDialog<String>(
-                        context: context,
-                        builder: (BuildContext context) => AlertDialog(
-                          title: const Text('Lỗi'),
-                          content: const Text('Tính năng hiện chưa cập nhật!'),
-                          actions: <Widget>[
-                            TextButton(
-                              onPressed: () => Navigator.pop(context, 'OK'),
-                              child: const Text('OK'),
-                            ),
-                          ],
-                        ),
-                      ),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ForgotPassWord()));
+                  },
                   child: Text("Quên mật khẩu?",
                       style: TextStyle(
                         color: Colors.blue[500],

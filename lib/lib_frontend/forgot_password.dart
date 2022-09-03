@@ -1,55 +1,30 @@
 import 'package:flutter/material.dart';
+import 'create_account.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Forgot Password'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class ForgotPassWord extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        leading: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back)),
-        title: Text(widget.title),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back)),
+        title: Text("Đặt mật khẩu mới"),
       ),
       body: Column(
         children: [
           Center(
-            child: Image.network(
-                'https://ebudezain.com/upload/images/flutter/flutter12.png',
-                height: 80,
-                width: 200),
-          ),
+              child: FlutterLogo(
+            size: 150,
+          )),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
               decoration: const InputDecoration(
-                hintText: "Your Email",
+                hintText: "Email",
                 border: OutlineInputBorder(),
               ),
               onSaved: (String? value) {},
@@ -58,8 +33,9 @@ class _MyHomePageState extends State<MyHomePage> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
+                obscureText: true,
                 decoration: const InputDecoration(
-                  hintText: "New Password",
+                  hintText: "Mật khẩu mới",
                   border: OutlineInputBorder(),
                 ),
                 onSaved: (String? value) {},
@@ -68,8 +44,9 @@ class _MyHomePageState extends State<MyHomePage> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
+                obscureText: true,
                 decoration: const InputDecoration(
-                  hintText: "Enter Password again",
+                  hintText: "Nhập lại mật khẩu",
                   border: OutlineInputBorder(),
                 ),
                 onSaved: (String? value) {},
@@ -88,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Center(
                   child: TextButton(
                       onPressed: () {},
-                      child: Text("Continue",
+                      child: Text("Đổi mật khẩu",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,
@@ -100,9 +77,14 @@ class _MyHomePageState extends State<MyHomePage> {
             margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
             child: Center(
                 child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const CreateAccount()));
+                    },
                     child: Text(
-                      "New User? Create Account",
+                      "Đăng ký",
                       style: TextStyle(
                         color: Colors.grey[500],
                       ),
