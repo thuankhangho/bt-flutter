@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/lib_frontend/baoLoi&gopY.dart';
+import 'package:flutter_app/lib_frontend/comment.dart';
 
 class LineBoard extends StatelessWidget {
-  const LineBoard(this.icon, this.title, {super.key});
+  const LineBoard(this.icon, this.title, this.onPressed, {super.key});
   final IconData icon;
   final String title;
+  final Function() onPressed;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,23 +23,7 @@ class LineBoard extends StatelessWidget {
           ),
           selected: true,
         ),
-        onPressed: () => showDialog<String>(
-          context: context,
-          builder: (BuildContext context) => AlertDialog(
-            title: const Text('Lỗi'),
-            content: const Text('Tính năng hiện chưa cập nhật!'),
-            actions: <Widget>[
-              // TextButton(
-              //   onPressed: () => Navigator.pop(context, 'Hủy'),
-              //   child: const Text('Hủy'),
-              // ),
-              TextButton(
-                onPressed: () => Navigator.pop(context, 'OK'),
-                child: const Text('OK'),
-              ),
-            ],
-          ),
-        ),
+        onPressed: onPressed,
       ),
     );
   }
@@ -65,14 +52,24 @@ class Settings extends StatelessWidget {
       ),
       body: Column(
         children: [
-          LineBoard(Icons.shopping_cart, "Đăng ký thành viên VIP"),
-          LineBoard(Icons.settings, "Kiểm tra dữ liệu offline"),
-          LineBoard(Icons.wechat_sharp, "Báo lỗi & Góp Ý"),
-          LineBoard(Icons.security, "Chính sách bảo mật"),
-          LineBoard(Icons.thumb_up, "Đánh giá ứng dụng"),
-          LineBoard(Icons.share, "Chia sẻ"),
-          LineBoard(Icons.question_mark, "Câu hỏi thường gặp"),
-          LineBoard(Icons.info, "Thông tin về ứng dụng"),
+          LineBoard(Icons.shopping_cart, "Đăng ký thành viên VIP", () => {}),
+          LineBoard(Icons.settings, "Kiểm tra dữ liệu offline", () => {}),
+          LineBoard(Icons.wechat_sharp, "Báo lỗi & góp ý", () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => BaoLoiVaGopY()));
+          }),
+          LineBoard(Icons.security, "Chính sách bảo mật", () => {}),
+          LineBoard(
+            Icons.thumb_up,
+            "Đánh giá ứng dụng",
+            () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => BinhLuan()));
+            },
+          ),
+          LineBoard(Icons.share, "Chia sẻ", () => {}),
+          LineBoard(Icons.question_mark, "Câu hỏi thường gặp", () => {}),
+          LineBoard(Icons.info, "Thông tin về ứng dụng", () => {}),
         ],
       ),
     );

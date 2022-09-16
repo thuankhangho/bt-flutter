@@ -1,33 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class BinhLuan extends StatelessWidget {
   bool _isStar = false;
 
   var _star1 = Colors.grey;
@@ -66,63 +39,68 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 IconButton(
                     color: _star1,
-                    onPressed: () {
-                      setState(() {
-                        _star1 = Colors.yellow;
-                        _star2 = Colors.grey;
-                        _star3 = Colors.grey;
-                        _star4 = Colors.grey;
-                        _star5 = Colors.grey;
-                      });
-                    },
+                    onPressed: () {},
+                    // onPressed: () {
+                    //   setState(() {
+                    //     _star1 = Colors.yellow;
+                    //     _star2 = Colors.grey;
+                    //     _star3 = Colors.grey;
+                    //     _star4 = Colors.grey;
+                    //     _star5 = Colors.grey;
+                    //   });
+                    // },
                     icon: Icon(Icons.star)),
                 IconButton(
-                  color: _star2,
-                    onPressed: () {
-                      setState(() {
-                        _star1 = Colors.yellow;
-                        _star2 = Colors.yellow;
-                        _star3 = Colors.grey;
-                        _star4 = Colors.grey;
-                        _star5 = Colors.grey;
-                      });
-                    }, 
+                    color: _star2,
+                    onPressed: () {},
+                    // onPressed: () {
+                    //   setState(() {
+                    //     _star1 = Colors.yellow;
+                    //     _star2 = Colors.yellow;
+                    //     _star3 = Colors.grey;
+                    //     _star4 = Colors.grey;
+                    //     _star5 = Colors.grey;
+                    //   });
+                    // },
                     icon: Icon(Icons.star)),
                 IconButton(
-                  color: _star3,
-                    onPressed: () {
-                      setState(() {
-                        _star1 = Colors.yellow;
-                        _star2 = Colors.yellow;
-                        _star3 = Colors.yellow;
-                        _star4 = Colors.grey;
-                        _star5 = Colors.grey;
-                      });
-                    },
+                    color: _star3,
+                    onPressed: () {},
+                    // onPressed: () {
+                    //   setState(() {
+                    //     _star1 = Colors.yellow;
+                    //     _star2 = Colors.yellow;
+                    //     _star3 = Colors.yellow;
+                    //     _star4 = Colors.grey;
+                    //     _star5 = Colors.grey;
+                    //   });
+                    // },
                     icon: Icon(Icons.star)),
                 IconButton(
-                  color: _star4,
-                    onPressed: () {
-                      setState(() {
-                        _star1 = Colors.yellow;
-                        _star2 = Colors.yellow;
-                        _star3 = Colors.yellow;
-                        _star4 = Colors.yellow;
-                        _star5 = Colors.grey;
-                      });
-                    },
+                    color: _star4,
+                    onPressed: () {},
+                    // onPressed: () {
+                    //   setState(() {
+                    //     _star1 = Colors.yellow;
+                    //     _star2 = Colors.yellow;
+                    //     _star3 = Colors.yellow;
+                    //     _star4 = Colors.yellow;
+                    //     _star5 = Colors.grey;
+                    //   });
+                    // },
                     icon: Icon(Icons.star)),
                 IconButton(
-                  color: _star5,
-                    onPressed: () {
-                      setState(() {
-                        _star1 = Colors.yellow;
-                        _star2 = Colors.yellow;
-                        _star3 = Colors.yellow;
-                        _star4 = Colors.yellow;
-                        _star5 = Colors.yellow;
-                      });
-                    },
+                    color: _star5,
+                    onPressed: () {},
+                    // onPressed: () {
+                    //   setState(() {
+                    //     _star1 = Colors.yellow;
+                    //     _star2 = Colors.yellow;
+                    //     _star3 = Colors.yellow;
+                    //     _star4 = Colors.yellow;
+                    //     _star5 = Colors.yellow;
+                    //   });
+                    // },
                     icon: Icon(Icons.star)),
               ],
             )),
