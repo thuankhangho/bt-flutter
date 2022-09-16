@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/lib_frontend/baoLoi&gopY.dart';
-import 'package:flutter_app/lib_frontend/comment.dart';
-import 'package:flutter_app/lib_frontend/share.dart';
+import 'package:flutter_app/screens/baoLoi&gopY.dart';
+import 'package:flutter_app/screens/comment.dart';
+import 'package:flutter_app/screens/share.dart';
 
 class LineBoard extends StatelessWidget {
   const LineBoard(this.icon, this.title, this.onPressed, {super.key});

@@ -1,8 +1,8 @@
 // import 'package:flutter/cupertino.dart';
 // import 'package:flutter/material.dart';
-// import 'package:flutter_app/lib_frontend/baoLoi&gopY.dart';
-// import 'package:flutter_app/lib_frontend/login.dart';
-// import 'package:flutter_app/lib_frontend/main_page.dart';
+// import 'package:flutter_app/screens/baoLoi&gopY.dart';
+// import 'package:flutter_app/screens/login.dart';
+// import 'package:flutter_app/screens/main_page.dart';
 // import 'main.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:provider/provider.dart';
