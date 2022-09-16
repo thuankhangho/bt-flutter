@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'create_account.dart';
 
 class ForgotPassWord extends StatelessWidget {
+  const ForgotPassWord({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/screens/baoLoi&gopY.dart';
+import 'package:flutter_app/screens/feedback.dart';
 import 'package:flutter_app/screens/comment.dart';
 import 'package:flutter_app/screens/share.dart';
 
