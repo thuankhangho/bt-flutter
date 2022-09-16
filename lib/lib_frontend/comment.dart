@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
-class BinhLuan extends StatelessWidget {
-  bool _isStar = false;
+class Comment extends StatelessWidget {
+  final _isStar = false;
 
-  var _star1 = Colors.grey;
-  var _star2 = Colors.grey;
-  var _star3 = Colors.grey;
-  var _star4 = Colors.grey;
-  var _star5 = Colors.grey;
+  final _star1 = Colors.grey;
+  final _star2 = Colors.grey;
+  final _star3 = Colors.grey;
+  final _star4 = Colors.grey;
+  final _star5 = Colors.grey;
+
+  const Comment({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class BinhLuan extends StatelessWidget {
                 Navigator.pop(context);
               },
               icon: Icon(Icons.arrow_back)),
-          title: Text("Đăng nhập"),
+          title: Text("Đánh giá ứng dụng"),
         ),
         body: Column(
           children: [

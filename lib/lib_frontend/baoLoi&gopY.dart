@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-class BaoLoiVaGopY extends StatelessWidget {
+class Opinion extends StatelessWidget {
+  const Opinion({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,7 +13,7 @@ class BaoLoiVaGopY extends StatelessWidget {
                 Navigator.pop(context);
               },
               icon: Icon(Icons.arrow_back)),
-          title: Text("Đăng nhập"),
+          title: Text("Báo lỗi & Góp ý"),
         ),
         body: Column(
           children: [
@@ -19,7 +21,7 @@ class BaoLoiVaGopY extends StatelessWidget {
               keyboardType: TextInputType.multiline,
               maxLines: 4,
               decoration: InputDecoration(
-                  hintText: "Báo Lỗi & Góp Ý",
+                  hintText: "Báo lỗi & Góp ý",
                   border: OutlineInputBorder(),
                   focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(

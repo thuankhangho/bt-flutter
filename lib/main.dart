@@ -4,8 +4,9 @@ import 'package:flutter_app/wrapper.dart';
 import 'lib_frontend/main_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-void main() {
-  Firebase.initializeApp();
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
