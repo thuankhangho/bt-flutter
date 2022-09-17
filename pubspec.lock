@@ -283,7 +283,7 @@ packages:
     source: hosted
     version: "2.1.0"
   shared_preferences_web:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: shared_preferences_web
       url: "https://pub.dartlang.org"
