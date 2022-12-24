@@ -14,7 +14,7 @@ class LogIn extends StatelessWidget {
               Navigator.pop(context);
             },
             icon: Icon(Icons.arrow_back)),
-        title: Text("Đăng nhập"),
+        title: Text("Login"),
       ),
       body: Column(
         children: [
@@ -42,14 +42,14 @@ class LogIn extends StatelessWidget {
             child: TextField(
                 obscureText: true,
                 decoration: const InputDecoration(
-                  hintText: "Mật khẩu",
+                  hintText: "Password",
                   border: OutlineInputBorder(),
                 )),
           ),
           Center(
               child: TextButton(
                   onPressed: () {},
-                  child: Text("Quên mật khẩu?",
+                  child: Text("Forgot password?",
                       style: TextStyle(
                         color: Colors.blue[500],
                       )))),
@@ -66,7 +66,7 @@ class LogIn extends StatelessWidget {
               child: Center(
                   child: TextButton(
                       onPressed: () {},
-                      child: Text("Đăng nhập",
+                      child: Text("Login",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,
@@ -85,7 +85,7 @@ class LogIn extends StatelessWidget {
                               builder: (context) => CreateAccount()));
                     },
                     child: Text(
-                      "Đăng ký",
+                      "Register",
                       style: TextStyle(
                         color: Colors.grey[500],
                       ),

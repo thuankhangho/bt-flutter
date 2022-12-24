@@ -13,7 +13,7 @@ class History extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        title: Text("Lịch sử tra từ"),
+        title: Text("Searched words"),
         actions: [
           IconButton(
             icon: Icon(Icons.search),
@@ -63,7 +63,7 @@ class History extends StatelessWidget {
                       ),
                       // borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Center(child: Text("Lịch sử tra từ trống")))
+                    child: Center(child: Text("Currently empty")))
               ],
             ),
           )),

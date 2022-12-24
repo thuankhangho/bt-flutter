@@ -13,7 +13,7 @@ class CreateAccount extends StatelessWidget {
               Navigator.pop(context);
             },
             icon: Icon(Icons.arrow_back)),
-        title: Text("Tạo tài khoản mới"),
+        title: Text("Create new account"),
       ),
       body: Column(
         children: [
@@ -37,7 +37,7 @@ class CreateAccount extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
                 decoration: const InputDecoration(
-                  hintText: "Mật khẩu",
+                  hintText: "Password",
                   border: OutlineInputBorder(),
                 ),
                 onSaved: (String? value) {},
@@ -47,7 +47,7 @@ class CreateAccount extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
                 decoration: const InputDecoration(
-                  hintText: "Nhập lại mật khẩu",
+                  hintText: "Retype password",
                   border: OutlineInputBorder(),
                 ),
                 onSaved: (String? value) {},
@@ -66,7 +66,7 @@ class CreateAccount extends StatelessWidget {
               child: Center(
                   child: TextButton(
                       onPressed: () {},
-                      child: Text("Tạo tài khoản",
+                      child: Text("Create new Account",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,

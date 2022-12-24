@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Từ điển Flutter',
+      title: 'Flutter Dictionary',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

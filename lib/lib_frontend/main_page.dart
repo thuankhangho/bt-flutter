@@ -48,7 +48,7 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       // backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Từ điển Flutter"),
+        title: Text("Flutter Dictionary"),
         elevation: 0,
         actions: [
           Container(
@@ -86,7 +86,7 @@ class _MainPageState extends State<MainPage> {
                         cursorColor: Colors.black,
                         decoration: InputDecoration(
                           focusColor: Colors.blue,
-                          hintText: "Tra từ",
+                          hintText: "Search word",
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.all(
                               Radius.circular(50),
@@ -112,7 +112,7 @@ class _MainPageState extends State<MainPage> {
                         // ),
                         ),
                     trailing: ElevatedButton(
-                        child: Text("Tìm",
+                        child: Text("Search",
                             style: TextStyle(
                               // color: Colors.white,
                               fontSize: 15,
@@ -127,20 +127,20 @@ class _MainPageState extends State<MainPage> {
                         ))),
               )
             ]),
-            LineBoard(Icons.star, "Từ đã lưu", () {
+            LineBoard(Icons.star, "Saved words", () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => YourDictionary()));
             }),
-            LineBoard(Icons.settings, "Cài đặt", () {
+            LineBoard(Icons.settings, "Settings", () {
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => Settings()));
             }),
-            LineBoard(Icons.refresh, "Lịch sử tra từ", () {
+            LineBoard(Icons.refresh, "Searched words", () {
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => History()));
             }),
             // LineBoard(Icons.smartphone, "Ứng dụng học Tiếng Anh khác"),
-            LineBoard(Icons.person, "Đăng nhập", () {
+            LineBoard(Icons.person, "Login", () {
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => LogIn()));
             }),
